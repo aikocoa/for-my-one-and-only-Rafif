@@ -1,1 +1,165 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>For Rafif ♡</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&display=swap');
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff0f5;
+      font-family: 'Caveat', cursive;
+      color: #a04465;
+      text-align: center;
+    }
+
+    .card {
+      width: 85%;
+      max-width: 450px;
+      padding: 40px 20px;
+      border-radius: 24px;
+      background: #fffafd;
+      box-shadow: 0 8px 35px #e9b6c744;
+      animation: appear 1s ease;
+    }
+
+    h1 {
+      font-size: 42px;
+      line-height: 1.2;
+    }
+
+    .flowers {
+      font-size: 38px;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 12px;
+      min-height: 115px;
+    }
+
+    button {
+      font: 700 27px 'Caveat', cursive;
+      border: none;
+      border-radius: 30px;
+      padding: 10px 25px;
+      cursor: pointer;
+    }
+
+    #yes {
+      background: #f4a8c2;
+      color: white;
+      margin-top: 15px;
+    }
+
+    .no-zone {
+      position: relative;
+      width: 145px;
+      height: 105px;
+    }
+
+    #no {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      background: #f8e2eb;
+      color: #a04465;
+      transition: top .2s, left .2s;
+    }
+
+    #message {
+      font-size: 25px;
+      min-height: 35px;
+    }
+
+    #letter {
+      display: none;
+      font-size: 26px;
+      line-height: 1.35;
+    }
+
+    @keyframes float {
+      50% { transform: translateY(-10px); }
+    }
+
+    @keyframes appear {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="card">
+    <div class="flowers">🌸 🩷 🌸</div>
+
+    <h1 id="question">Rafif, will you be my girlfriend? ♡</h1>
+
+    <div class="buttons" id="buttons">
+      <button id="yes">Yes ♡</button>
+      <div class="no-zone">
+        <button id="no">No</button>
+      </div>
+    </div>
+
+    <p id="message"></p>
+
+    <section id="letter">
+      <h2>My sweetest girl ♡</h2>
+      <p>
+        From the moment you came into my life,
+        you made my ordinary days feel special.
+      </p>
+      <p>
+        This is where I'll write you the
+        love letter you deserve.
+      </p>
+      <p>Forever yours, Ai ♡</p>
+      <div>🩷 🌸 🩷</div>
+    </section>
+  </main>
+
+  <script>
+    const messages = [
+      "baby, are you sureee? 🥺",
+      "you clicked the wrong one, baby. try again ♡",
+      "i'm not giving up that easily hehe",
+      "go on, press it again. i dare you ♡"
+    ];
+
+    let clicks = 0;
+
+    document.getElementById("no").onclick = function() {
+      document.getElementById("message").textContent =
+        messages[clicks % messages.length];
+
+      clicks++;
+
+      // Keep No inside its own area, away from Yes.
+      this.style.left = Math.floor(Math.random() * 65) + "px";
+      this.style.top = Math.floor(Math.random() * 50) + "px";
+    };
+
+    document.getElementById("yes").onclick = function() {
+      document.getElementById("question").textContent =
+        "You just made me the happiest girl ♡";
+
+      document.getElementById("buttons").style.display = "none";
+      document.getElementById("message").style.display = "none";
+      document.getElementById("letter").style.display = "block";
+    };
+  </script>
+</body>
+</html>
+
