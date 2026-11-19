@@ -1,0 +1,823 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#ffffff"><title>For Rafif ♡</title><style>
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Caveat:wght@500;600;700&family=Patrick+Hand&display=swap');
+:root{--ink:#302b36;--pink:#f7a9bd;--cream:#faf4ef}*{box-sizing:border-box}body{margin:0;min-height:100dvh;background:#ffffff;color:var(--ink);font-family:'Patrick Hand',cursive;overflow-x:hidden}main{position:relative;min-height:100dvh;display:flex;align-items:center;justify-content:center;padding:24px;overflow:hidden;transition:background .65s}main.night{background:#1c2033;color:#fff}main.success{background:linear-gradient(145deg,#ffe6ef,#f8c6d7 55%,#f9dfe7)}.panel{text-align:center;position:relative;width:min(100%,760px);min-height:440px;display:flex;align-items:center;flex-direction:column;justify-content:center}.eyebrow{font-size:12px;letter-spacing:.23em;text-transform:uppercase;opacity:.5;margin:0 0 20px}.question{font:400 clamp(32px,6vw,56px)/1.35 'Indie Flower',cursive;margin:0 0 25px;position:relative;z-index:2}.kitty{width:225px;height:190px;margin:0 auto 22px;position:relative;z-index:2;transition:transform .4s}.kitty img{width:100%;height:100%;object-fit:contain;display:block}.actions{width:100%;height:95px;display:flex;align-items:flex-start;justify-content:center;gap:12px;position:relative;z-index:3}.btn{font-family:'Patrick Hand',cursive;cursor:pointer;border:1.5px solid #625a61;background:#fff9f5;color:#342e33;border-radius:3px;padding:12px 30px;font-size:21px;transition:font-size .3s,padding .3s,transform .3s,background .3s;box-shadow:2px 3px 0 #00000012}.btn:focus-visible{outline:3px solid #f08bac;outline-offset:4px}.yes{position:relative;z-index:4}.no{position:relative;z-index:5}.hint{font:22px 'Caveat',cursive;opacity:.65;position:relative;z-index:2;margin-top:10px}.escape-no{position:fixed;z-index:10;transition:top .25s,left .25s}.huge-yes{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;border:0;border-radius:0;background:#1c2033;color:#fff;font-size:clamp(120px,35vw,550px);font-weight:500;letter-spacing:-.06em;z-index:7;box-shadow:none}.tiny-no{position:fixed;right:5%;top:7%;z-index:9;font-size:12px;padding:9px 18px}.hearts{position:absolute;inset:0;pointer-events:none;overflow:hidden}.heart{position:absolute;bottom:-70px;animation:floatUp var(--duration) linear infinite;opacity:.6;font-size:var(--size);left:var(--left);animation-delay:var(--delay)}@keyframes floatUp{to{transform:translateY(-115vh) rotate(30deg);opacity:0}}.result{width:min(100%,630px);margin:auto;position:relative;z-index:2;text-align:center;animation:appear .8s both}@keyframes appear{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:translateY(0)}}.result h1{font:700 clamp(44px,9vw,78px)/1 'Caveat',cursive;margin:15px 0}.result p.subtitle{font:26px 'Caveat',cursive;margin:0 0 25px}.letter{background:#fffaf7;border:1px solid #f4c8d6;border-radius:18px;padding:clamp(24px,6vw,48px);text-align:left;box-shadow:0 18px 55px #ab657b24;line-height:1.9;font-size:19px}.letter h2{font:700 38px 'Caveat',cursive;color:#bb607e;margin:0 0 12px}.letter p{margin:0 0 16px}.letter .signature{font:600 27px 'Caveat',cursive;color:#bb607e;margin:20px 0 0}.restart{margin:25px auto 0;background:transparent;border:0;color:#7f4b64;text-decoration:underline;cursor:pointer}.spark{font-size:24px}.footer{font-size:12px;opacity:.5;margin-top:18px}@media(max-width:550px){.panel{min-height:510px}.kitty{width:190px;height:165px}.letter{line-height:1.8}.question{max-width:340px}.actions{height:105px}}
+
+.scribbles{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:1;opacity:1;transition:background .3s}.scribble{position:absolute;white-space:nowrap;color:#30242b;font:700 var(--fs) / 1.05 'Indie Flower',cursive;letter-spacing:-.045em;opacity:var(--op);transform:rotate(var(--rot));user-select:none;animation:scrawl .22s steps(2,end) infinite alternate}.panel{z-index:2}.question{background:#ffffffdd;border-radius:14px;padding:0 12px}.night .question{background:#1c2033dd}.night .scribble{color:#fff3f5}.night .scribbles{background:linear-gradient(145deg,#1c203300,#170b1877)}@keyframes scrawl{to{transform:translate(2px,-1px) rotate(var(--rot))}}@media(prefers-reduced-motion:reduce){.scribble{animation:none}}
+
+.hand-lettering{display:inline-flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:0;max-width:100%;vertical-align:middle;line-height:1.3}
+.hand-lettering .glyph{height:.9em;width:auto;object-fit:contain;display:inline-block;vertical-align:middle;margin:0 .025em}
+.hand-lettering .space{width:.26em}.hand-lettering .punct{font-family:'Comic Sans MS',cursive;font-weight:300;color:#766c67;font-size:.83em}
+.question .hand-lettering{max-width:100%}.btn .hand-lettering{white-space:nowrap;flex-wrap:nowrap}.huge-yes .glyph{filter:brightness(0) invert(1)}
+
+@font-face{font-family:'CK Jot';src:url('ck-jot-regular.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
+.question,.btn{font-family:'CK Jot',cursive;font-weight:400}
+
+html{background:#fff}main:not(.night):not(.success){background:#fff}
+
+.panel > *{flex-shrink:0}.actions{height:auto;min-height:105px}.hint{margin:0 0 20px;padding:6px 12px;max-width:100%;z-index:11;opacity:1;background:#ffffffed;border-radius:10px}.night .hint{background:#1c2033ed}.yes:not(.huge-yes){max-width:100%}
+
+.yes{transition:background .3s}.escape-no{transition:none}.actions.safe-stack{flex-direction:column;align-items:center}.no.safe-no{position:relative;inset:auto;margin-top:16px}
+.final-question .eyebrow,.final-question .question,.final-question .kitty{visibility:hidden}
+.final-question .scribbles{background:#1c1425}
+.final-question .scribble{color:#f4b7ce;line-height:1.15}
+.final-question .huge-yes{background:transparent;font-size:clamp(130px,32vw,430px);padding:18vh 0 0;letter-spacing:0;text-shadow:0 3px 3px #1c1425,0 0 28px #1c1425,0 0 65px #1c1425;color:#fff4f8}
+.final-question .hint{position:fixed;top:max(24px,8dvh);left:50%;transform:translateX(-50%);width:min(88vw,720px);margin:0;padding:20px 24px;background:#241828eb;color:#fff1f7;font-family:'CK Jot',cursive;font-size:clamp(22px,4.8vw,36px);line-height:1.4;z-index:12;pointer-events:none;border:1px solid #d7a1b52b;border-radius:3px;text-align:center}
+@media(prefers-reduced-motion:reduce){.final-question .scribble{animation:none}}
+
+/* The sealed envelope and the open letter share the same paper desk. */
+main.mail-desk {
+  --letter-ink: #603d4b;
+  --letter-hand: 'CK Jot', Georgia, 'Times New Roman', serif;
+  display: block;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: 0;
+  color: var(--letter-ink);
+  background-color: #fae6ec;
+  background-image:
+    radial-gradient(ellipse at 30% 0, #fff7f998, transparent 65rem),
+    repeating-linear-gradient(0deg, transparent 0 11px, #c7839821 11px 22px),
+    repeating-linear-gradient(90deg, transparent 0 11px, #c7839821 11px 22px);
+  overflow: clip;
+}
+.mail-arrival {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: clamp(1.65rem, 6svh, 4.5rem) clamp(1.35rem, 5vw, 4.5rem);
+  background-color: #e7eadb;
+  background-image:
+    radial-gradient(ellipse at 8% 5%, #fffae5c4, transparent 55%),
+    radial-gradient(ellipse at 95% 85%, #a7b1914a, transparent 55%),
+    repeating-linear-gradient(113deg, #93a1810b 0 1px, transparent 1px 5px),
+    radial-gradient(#8998792b .6px, transparent .9px);
+  background-size: auto, auto, auto, 6px 6px;
+}
+.picnic-blanket {
+  position: relative;
+  isolation: isolate;
+  width: min(100%, 60rem, 140svh);
+  padding: clamp(1.1rem, 2.8vw, 2.2rem);
+}
+.blanket-cloth {
+  --check-size: clamp(1.8rem, 3.6vw, 2.8rem);
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  transform: rotate(-1.2deg);
+  border: 1px solid #cd9ba475;
+  border-radius: 1.2% .7% 1% .8% / 1% 1.2% .6% 1.2%;
+  background-color: #fff2e9;
+  background-image:
+    linear-gradient(113deg, #fff8e951 0%, transparent 35%, #ac65710c 64%, #fff6ed49 90%),
+    repeating-linear-gradient(0deg, #fff9ed40 0 1px, transparent 1px 3px),
+    repeating-linear-gradient(90deg, #a97c7917 0 1px, transparent 1px 3px),
+    linear-gradient(90deg, #da899b68 50%, transparent 50%),
+    linear-gradient(0deg, #df92a16b 50%, transparent 50%);
+  background-size: auto, auto, auto, var(--check-size) var(--check-size), var(--check-size) var(--check-size);
+  box-shadow: 0 .25rem .45rem #6a765726, 0 1.15rem 2.6rem -.7rem #65725154;
+}
+.blanket-cloth::before,
+.blanket-cloth::after {
+  content: '';
+  position: absolute;
+  pointer-events: none;
+}
+.blanket-cloth::before {
+  inset: .65rem;
+  border: 1px dashed #a9707e8f;
+  outline: 1px solid #fff6ec98;
+  outline-offset: 4px;
+  border-radius: inherit;
+}
+.blanket-cloth::after {
+  inset: -.42rem .35rem;
+  background: repeating-linear-gradient(97deg, transparent 0 2px, #e8b8c2 2px 3.4px, #fff2e6 3.4px 4.8px, transparent 4.8px 7px) top left / 100% .48rem no-repeat,
+              repeating-linear-gradient(84deg, transparent 0 2px, #e8b8c2 2px 3.4px, #fff2e6 3.4px 5px, transparent 5px 7px) bottom left / 100% .48rem no-repeat;
+}
+.picnic-scene {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1.64;
+  font-family: var(--letter-hand);
+}
+.picnic-plush, .picnic-snacks, .envelope-bouquet {
+  position: absolute;
+  pointer-events: none;
+}
+.picnic-plush img, .picnic-snacks img, .envelope-bouquet img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+}
+.picnic-plush {
+  top: 3%;
+  left: 8%;
+  width: 25%;
+  height: 50%;
+  transform: rotate(-5deg);
+}
+.picnic-plush img {
+  filter: drop-shadow(2px 5px 3px #6c554139);
+  transform-origin: 49% 93%;
+  animation: plush-settle 1.35s cubic-bezier(.25,.72,.32,1) .1s both;
+}
+@keyframes plush-settle {
+  0% { opacity: 0; transform: translateY(-.5rem) rotate(-5deg); }
+  48% { opacity: 1; transform: rotate(3deg); }
+  75% { transform: rotate(-1.5deg); }
+  100% { opacity: 1; transform: rotate(0); }
+}
+.picnic-snacks {
+  left: 2%;
+  bottom: 6%;
+  width: 34%;
+  height: 36%;
+  isolation: isolate;
+  transform: rotate(-5deg);
+  animation: set-down-plate .65s ease-out .18s backwards;
+}
+.picnic-snacks::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: 10% 8% 5%;
+  transform: rotate(-7deg);
+  background-color: #fff9ec;
+  background-image:
+    linear-gradient(90deg, transparent 7%, #a5ac8b 7% 7.6%, transparent 7.6% 9%, #b5b99e 9% 9.6%, transparent 9.6%),
+    repeating-linear-gradient(0deg, #bcb29e1f 0 1px, transparent 1px 3px);
+  border: 1px solid #d8ceba8c;
+  border-radius: 2% 1% 6% 1%;
+  box-shadow: 1px 3px 3px #70514225;
+}
+.picnic-snacks img { filter: drop-shadow(1px 4px 2px #6d534638); }
+@keyframes set-down-plate {
+  from { opacity: 0; transform: translate(-.4rem, -.3rem) rotate(-8deg); }
+  to { opacity: 1; transform: rotate(-5deg); }
+}
+.envelope-bouquet {
+  right: 4%;
+  bottom: 6%;
+  width: 40.5%;
+  aspect-ratio: 696 / 950;
+  transform-origin: 52% 80%;
+  transition: transform .65s ease-out;
+}
+.envelope-bouquet img {
+  transform: rotate(3deg);
+  transform-origin: 53% 83%;
+  filter: drop-shadow(2px 5px 3px #74485830);
+  animation: picnic-breeze 2.2s ease-in-out .15s 2;
+}
+@keyframes picnic-breeze {
+  0%, 100% { transform: rotate(3deg); }
+  50% { transform: rotate(5.2deg) translateY(-2px); }
+}
+.unsealing .envelope-bouquet { transform: rotate(3deg) translateX(2%); }
+.envelope-trigger {
+  appearance: none;
+  position: absolute;
+  z-index: 2;
+  left: 36.5%;
+  bottom: 3%;
+  width: 28%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(.8rem, 2vw, 1.5rem);
+  margin: 0;
+  padding: 0;
+  font-family: var(--letter-hand);
+  color: var(--letter-ink);
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.envelope-trigger:focus-visible {
+  outline: 2px solid #804154;
+  outline-offset: .5rem;
+  border-radius: .25rem;
+}
+.envelope-art {
+  position: relative;
+  display: block;
+  width: 75%;
+  aspect-ratio: 1.6;
+  isolation: isolate;
+  perspective: 65rem;
+  container-type: inline-size;
+  transform: rotate(-5deg);
+  transform-origin: 48% 70%;
+  transition: transform .23s ease-out;
+  animation: nervous-note 1.2s ease-in-out .8s;
+}
+@keyframes nervous-note {
+  0%, 100% { transform: rotate(-5deg); }
+  30% { transform: translateY(-2px) rotate(-7deg); }
+  53% { transform: rotate(-3deg); }
+  75% { transform: rotate(-5.8deg); }
+}
+.envelope-back,
+.envelope-insert,
+.envelope-pocket,
+.envelope-bottom,
+.envelope-flap {
+  position: absolute;
+  display: block;
+  border-radius: .2rem;
+}
+.envelope-back {
+  inset: 0;
+  background: #ce929d;
+  box-shadow: 0 .25rem .45rem #7e445422, 0 1.25rem 2.4rem -.6rem #834b5b48;
+}
+.envelope-insert {
+  inset: 5% 3.5% 6%;
+  z-index: 1;
+  background: #fffaf4;
+  border: 1px solid #e2c7c9;
+  box-shadow: 0 -3px 7px #94495a15;
+}
+.envelope-insert::after {
+  content: '';
+  display: block;
+  height: 9%;
+  margin: 9% 10%;
+  border-top: 1px solid #cb9caa;
+  border-bottom: 1px solid #e9cbd4;
+}
+.envelope-pocket {
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(106deg, #f3bfca, #f8d4dc 45%, #eebac7);
+  clip-path: polygon(0 0, 50% 54%, 100% 0, 100% 100%, 0 100%);
+}
+.envelope-bottom {
+  inset: 0;
+  z-index: 3;
+  background: linear-gradient(165deg, #fce3e6, #f4cad4);
+  clip-path: polygon(0 100%, 49% 45%, 51% 45%, 100% 100%);
+}
+.envelope-flap {
+  inset: 0 0 auto;
+  height: 62%;
+  z-index: 5;
+  transform-origin: top center;
+  filter: drop-shadow(0 2px 1px #9355644a);
+}
+.envelope-flap::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(165deg, #fae1e5, #f5c6d0 85%);
+  clip-path: polygon(0 0, 100% 0, 52% 95%, 50% 96.5%, 48% 95%);
+}
+
+.envelope-address {
+  position: absolute;
+  z-index: 6;
+  inset: 67% 6% 7%;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  white-space: nowrap;
+  font: 400 clamp(1.1rem, 2.6vw, 2.25rem)/1 var(--letter-hand);
+  font-size: clamp(1rem, 12.5cqi, 2.5rem);
+}
+.wax-seal {
+  position: absolute;
+  z-index: 6;
+  width: 12%;
+  aspect-ratio: 1.02;
+  top: 44%;
+  left: 44%;
+  border-radius: 48% 55% 46% 53% / 52% 48% 57% 46%;
+  background: radial-gradient(ellipse at 44% 35%, #e4a2b3, #ce8094 68%, #bb7388 83%, #dfa1b1 96%);
+  box-shadow: inset 0 1px 2px #f5bdc9, 0 2px 3px #79455455;
+}
+.wax-seal::before, .wax-seal::after {
+  content: '';
+  position: absolute;
+}
+.wax-seal::before {
+  inset: 13%;
+  border: 1px solid #f3b6c485;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px #ad6a7e55;
+}
+.wax-seal::after {
+  width: 28%;
+  height: 40%;
+  left: 36%;
+  top: 27%;
+  border: 1px solid #a76679;
+  border-radius: 85% 8% 85% 8%;
+  transform: rotate(10deg);
+  background: linear-gradient(132deg, transparent 49%, #ae6b7c 51%, transparent 57%);
+}
+
+.open-envelope-label {
+  display: grid;
+  place-items: center;
+  min-height: 2.75rem;
+  max-width: 100%;
+  padding: .18rem .85rem .32rem;
+  border: 1px solid #a97985;
+  border-radius: 3px;
+  background: #fff9ef;
+  box-shadow: 1px 3px 0 #c79aa279, 0 3px 6px #7f586329;
+  font: 400 clamp(1.12rem, 2.4vw, 1.55rem)/1.16 var(--letter-hand);
+  text-align: center;
+}
+@media (hover: hover) {
+  .envelope-trigger:hover .envelope-art { transform: translateY(-.25rem) rotate(-3deg); }
+  .envelope-trigger:hover .open-envelope-label { background: #fff2e4; }
+}
+.envelope-trigger[aria-expanded="true"] { pointer-events: none; }
+.unsealing .envelope-flap { animation: lift-flap .55s ease-in-out forwards; }
+.unsealing .envelope-insert { animation: draw-note .47s .39s ease-out both; }
+.unsealing .wax-seal { animation: lift-seal .32s ease-in forwards; }
+.unsealing .open-envelope-label { opacity: 0; transition: opacity .2s; }
+.unsealing .envelope-art { animation: fade-envelope .28s .89s ease-in forwards; }
+@keyframes lift-flap {
+  0% { transform: rotateX(0); z-index: 5; }
+  55% { z-index: 5; }
+  56% { z-index: 0; }
+  100% { transform: rotateX(170deg); z-index: 0; }
+}
+@keyframes draw-note {
+  from { transform: translateY(0); }
+  to { transform: translateY(-42%) rotate(1deg); }
+}
+@keyframes lift-seal {
+  to { opacity: 0; transform: translateY(-65%) rotate(-12deg); }
+}
+@keyframes fade-envelope {
+  to { opacity: 0; transform: translateY(.5rem) rotate(-2deg); }
+}
+
+.letter-jumps {
+  position: sticky;
+  top: 0;
+  z-index: 4;
+  margin-bottom: 1.15rem;
+  padding: calc(.35rem + env(safe-area-inset-top, 0px)) .8rem .45rem;
+  border-bottom: 1px dashed #c096a3;
+  background: #f9e7ed;
+}
+.letter-reading:focus { outline: none; }
+.letter-jump-tabs {
+  display: flex;
+  justify-content: center;
+  gap: .65rem;
+}
+.letter-jump {
+  position: relative;
+  min-height: 2.75rem;
+  padding: .16rem .9rem .35rem 1.1rem;
+  border: 1px solid #ba8b9a;
+  border-radius: 2px 5px 5px 2px;
+  background: #fff7ef;
+  color: var(--letter-ink);
+  box-shadow: 1px 2px 0 #d8b3c0a3;
+  font: 400 1.35rem/1.15 var(--letter-hand);
+  cursor: pointer;
+}
+.letter-jump.to-bottom { background: #f6d8e1; }
+.letter-jump::before {
+  content: '';
+  position: absolute;
+  inset: .37rem auto .37rem .35rem;
+  border-left: 1px dashed #b17b8e;
+}
+.letter-jump:focus-visible { outline: 2px solid #804154; outline-offset: 3px; }
+.letter-jump:active { transform: translateY(1px); }
+@media (min-width: 70rem) {
+  .letter-jumps {
+    position: fixed;
+    top: 5.5rem;
+    left: calc(50% + 23.65rem);
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+  }
+  .letter-jump-tabs { flex-direction: column; }
+}
+.letter-reading {
+  color: var(--letter-ink);
+  font-family: var(--letter-hand);
+  font-weight: 400;
+  max-width: 50rem;
+  margin: 0 auto;
+  padding: clamp(2.5rem, 8vw, 5.5rem) clamp(1.1rem, 4vw, 2.5rem) 2.5rem;
+}
+.letter-stack {
+  position: relative;
+  isolation: isolate;
+  animation: settle-paper .45s ease-out both;
+}
+@keyframes settle-paper {
+  from { opacity: 0; transform: translateY(1rem); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.letter-stack::before,
+.letter-stack::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  border: 1px solid #dfbbc5;
+  border-radius: 2px;
+}
+.letter-stack::before {
+  inset: .8rem -.48rem -.5rem .55rem;
+  background: #edd0da;
+}
+.letter-stack::after {
+  inset: .4rem -.22rem -.23rem .25rem;
+  background: #fff2ee;
+}
+.writing-paper {
+  position: relative;
+  padding: clamp(2.6rem, 8vw, 5rem) clamp(1.25rem, 6.2vw, 4.7rem);
+  border: 1px solid #e5c9ce;
+  border-radius: 2px;
+  background-color: #fffaf5;
+  background-image: radial-gradient(#ad91841a .45px, transparent .75px);
+  background-size: 6px 6px;
+  box-shadow: 0 .45rem 1.9rem #663e4d20;
+}
+.writing-paper::before {
+  content: '';
+  position: absolute;
+  top: -.57rem;
+  left: 9%;
+  width: clamp(4rem, 15vw, 7.3rem);
+  height: 1.25rem;
+  transform: rotate(-5deg);
+  background-color: #f1c4ced9;
+  background-image: repeating-linear-gradient(90deg, transparent 0 5px, #fff0f177 5px 9px);
+  clip-path: polygon(1% 0,100% 0,98% 25%,100% 45%,98% 67%,100% 100%,0 100%,2% 73%,0 54%,2% 30%);
+}
+.writing-paper::after {
+  content: '';
+  position: absolute;
+  inset: .62rem;
+  border: 1px solid #dabec172;
+  border-inline-start: 3px double #dabec18a;
+  pointer-events: none;
+}
+.letter-heading {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) clamp(3.2rem, 12vw, 5.35rem);
+  column-gap: clamp(.55rem, 2vw, 1.15rem);
+  align-items: center;
+  padding: .25rem 0 1.8rem;
+  border-bottom: 3px double #d6b1bd;
+}
+.letter-heading h1 {
+  position: relative;
+  margin: 0;
+  color: inherit;
+  font: 400 clamp(2rem, 6.3vw, 3.85rem)/1.15 var(--letter-hand);
+  overflow-wrap: anywhere;
+}
+.letter-heading h1:focus { outline: none; }
+.letter-heading p {
+  position: relative;
+  max-width: 30rem;
+  margin: .8rem 0 0;
+  color: inherit;
+  font: 400 clamp(1.4rem, 3.2vw, 1.65rem)/1.45 var(--letter-hand);
+}
+.flower-postage {
+  position: relative;
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  display: block;
+  width: 100%;
+  aspect-ratio: .8;
+  transform: rotate(8deg);
+  filter: drop-shadow(1px 2px 1px #88596a25);
+  animation: stamp-settle .85s ease-out both;
+}
+.paper-stamp {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background: #efd1d8;
+  mask: linear-gradient(#000 0 0) center / calc(100% - 8px) calc(100% - 8px) no-repeat,
+        radial-gradient(circle, transparent 2.3px, #000 2.7px) -4px -4px / 8px 8px;
+}
+.paper-stamp::before {
+  content: '';
+  position: absolute;
+  inset: 7%;
+  border: 1px solid #bb8697;
+  background: #fff4ed;
+}
+.header-lily {
+  position: absolute;
+  width: 78%;
+  height: 80%;
+  left: 11%;
+  top: 10%;
+  object-fit: contain;
+  transform: rotate(-8deg);
+}
+@keyframes stamp-settle {
+  from { opacity: 0; transform: translate(.18rem, -.35rem) rotate(13deg); }
+  to { opacity: 1; transform: rotate(8deg); }
+}
+.letter-prose {
+  padding-top: 1.7rem;
+  font-size: clamp(1.65rem, 2.4vw, 1.9rem);
+  line-height: 1.42;
+  overflow-wrap: anywhere;
+}
+.letter-prose p { margin: 0 0 .93em; }
+.letter-prose .salutation,
+.letter-prose .sign-off,
+.letter-prose .name {
+  font-size: 1.06em;
+  line-height: 1.45;
+}
+.letter-prose .salutation { margin-bottom: .65em; }
+.letter-prose .love-translation { line-height: 1.9; }
+.letter-prose :is([lang="ar"], [lang="my"]) {
+  font: 400 clamp(1.06rem, 2.3vw, 1.2rem)/1.9 Georgia, 'Times New Roman', serif;
+}
+.letter-prose .love-translation[dir="rtl"] { text-align: start; }
+.pressed-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .8rem;
+  width: min(58%, 12rem);
+  margin: .85em auto 0;
+}
+.pressed-divider::before, .pressed-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #c593a3);
+}
+.pressed-divider::after { transform: rotate(180deg); }
+.pressed-divider img { width: 1.85rem; height: 2.2rem; object-fit: contain; transform: rotate(26deg); }
+.signature-flourish { margin-top: 1.35em; }
+.letter-prose .sign-off { margin: 0 0 .3em; }
+.letter-prose .name { margin: 0; }
+.letter-controls { margin-top: 2.2rem; text-align: center; }
+.letter-controls:focus { outline: none; }
+.letter-replay {
+  padding: .65rem .4rem;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: 400 1.3rem/1.4 var(--letter-hand);
+  text-decoration: underline;
+  text-underline-offset: .32em;
+  cursor: pointer;
+}
+.letter-replay:focus-visible { outline: 2px solid #914961; outline-offset: 3px; }
+.letter-footer {
+  margin: .3rem 0 0;
+  color: inherit;
+  font: 400 1.15rem/1.4 var(--letter-hand);
+}
+@media (max-width: 430px) {
+  .letter-heading { padding-bottom: 1.35rem; }
+  .writing-paper::after { inset: .43rem; }
+}
+@media (max-width: 600px) and (orientation: portrait) {
+  .mail-arrival { padding-inline: 1.2rem; }
+  .picnic-blanket {
+    width: min(100%, 29rem);
+    padding: .9rem .52rem 1.1rem;
+  }
+  .blanket-cloth::before { inset: .44rem; outline-offset: 2px; }
+  .picnic-scene { aspect-ratio: .76; }
+  .picnic-plush { top: 16%; left: 5%; width: 34%; height: 35%; }
+  .picnic-snacks { left: 2%; bottom: 12%; width: 45%; height: 28%; }
+  .envelope-bouquet { right: 4%; top: 3%; bottom: auto; width: 56%; }
+  .envelope-trigger { left: auto; right: 6%; bottom: 5%; width: 43%; gap: .85rem; }
+  .open-envelope-label { padding-inline: .5rem; font-size: clamp(1.09rem, 4.8vw, 1.3rem); }
+}
+@media (max-height: 460px) and (orientation: landscape) {
+  .mail-arrival { padding-block: 1.1rem; }
+  .picnic-blanket { width: min(100%, 140svh); padding: .9rem; }
+  .open-envelope-label { padding-inline: .45rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mail-desk *, .mail-desk *::before, .mail-desk *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+</style></head><body><main id="main"><div id="scribbles" class="scribbles" aria-hidden="true"></div><section class="panel" id="panel"><p class="eyebrow">a very important question ♡</p><h1 class="question">Rafif, will you be my girlfriend?</h1><div class="kitty"><img src="cat-transparent.png" alt="A sweet little cat holding a pink love letter surrounded by hearts"></div><p class="hint" id="hint">choose wisely, pretty girl...</p><div class="actions" id="actions"><button class="btn yes" id="yes">yes ♡</button><button class="btn no" id="no">no</button></div></section></main>
+<template id="sealed-envelope">
+  <section class="mail-arrival" aria-label="A picnic and a letter for Rafif">
+    <div class="picnic-blanket">
+      <span class="blanket-cloth" aria-hidden="true"></span>
+      <div class="picnic-scene">
+        <div class="picnic-plush">
+          <img src="picnic-miffy.webp" width="418" height="710" alt="A cream Miffy plush in a pink dress" decoding="async">
+        </div>
+        <div class="picnic-snacks">
+          <img src="picnic-snacks.webp" width="800" height="529" alt="A picnic plate of watermelon, cheese and strawberries" decoding="async">
+        </div>
+        <div class="envelope-bouquet">
+          <img src="pink-lily-bouquet.webp" width="696" height="950" alt="A pink ribbon around a bouquet of stargazer lilies" decoding="async">
+        </div>
+        <button class="envelope-trigger" type="button" aria-label="Open the envelope for Rafif" aria-expanded="false">
+          <span class="envelope-art" aria-hidden="true">
+            <span class="envelope-back"></span>
+            <span class="envelope-insert"></span>
+            <span class="envelope-pocket"></span>
+            <span class="envelope-bottom"></span>
+            <span class="envelope-flap"></span>
+            <span class="wax-seal"></span>
+            <span class="envelope-address">for rafif</span>
+          </span>
+          <span class="open-envelope-label">open the envelope</span>
+        </button>
+      </div>
+    </div>
+  </section>
+</template>
+
+
+<template id="opened-letter">
+  <section class="letter-reading" id="letter-start" tabindex="-1" aria-labelledby="letter-title">
+    <nav class="letter-jumps" aria-label="Letter navigation">
+      <div class="letter-jump-tabs">
+        <button class="letter-jump to-top" type="button" aria-controls="letter-start">to the top</button>
+        <button class="letter-jump to-bottom" type="button" aria-controls="letter-end">to the bottom</button>
+      </div>
+    </nav>
+    <div class="letter-stack">
+      <article class="writing-paper" aria-labelledby="letter-title">
+        <header class="letter-heading">
+          <span class="flower-postage" aria-hidden="true">
+            <span class="paper-stamp"><img class="header-lily" src="pink-lilies.png" alt=""></span>
+          </span>
+          <h1 id="letter-title" tabindex="-1">you said yes!!!</h1>
+          <p>you just made me the happiest puppy in this world ♡</p>
+        </header>
+        <div class="letter-prose">
+          <p class="salutation">Hi, my girlfriend.</p>
+          <p>My girlfriend!!!! MY girlfriend. MY GIRLFRIEND. MINE. YOU'RE ACTUALLY MY GIRLFRIEND!!!!</p>
+          <p>You have absolutely no idea how happy I am that I finally get to say that and actually mean you. Although, considering the embarrassing number of times I called you my girlfriend before we'd even properly established anything, I think we both saw this coming hehe :3 Seriously tho Rafif, I don't think I've ever been this sure about someone.</p>
+          <p>I wish I could see your face while you're reading this. Knowing you, you'd probably find some way to make me shy, and I'd end up giggling and kicking my feet instead of finishing what I wanted to say. One "puppy" from you and suddenly I forget how to be a functioning human being. It's embarrassing how easily you turn me into a complete idiot. That's partly why I wanted to write this for you. There are so many things I've wanted to tell you that I either get too shy to say, forget halfway through, or completely lose track of because you start being lovey dovey with me. So here I am, attempting to put all this love into words. Please appreciate the struggle. Your girlfriend is fighting for her life here ;p</p>
+          <p>I still remember the first time I saw your profile picture on HelloTalk. My immediate thought was, there's absolutely no way a girl this pretty would ever like me back. Apparently, my next thought was, well, let's find out. So I waved at you. I was going to send an actual message, but I couldn't decide between some cheesy-ass pickup line and simply telling you how pretty you were. I spent so long overthinking it that my friend distracted me, and all you ended up getting was a wave. (Ik Ik… rounds of applause for my elite rizz 🙂‍↕️)</p>
+          <p>Later, I made a voice room and shared it, secretly hoping you'd come. I knew there was only a small chance, but I wanted to talk to you so badly. Then you actually joined. My love, I was already struggling with your face. YOU DID NOT NEED TO HAVE THAT VOICE TOO. LIKE OMFGGGGGG… mmmmmm… 🤤 I started stuttering and squealing and gay panicking like an idiot, and every lesson I'd learned from Gun about being nonchalant disappeared the second you spoke. All I could think about was how much I wanted you to keep talking. I wanted your attention. I wanted to know the girl behind that pretty face and ridiculously attractive voice, even though I could barely get a proper sentence out.</p>
+          <p>It's funny looking back on that now. I was desperately trying to think of something interesting enough to make you want to talk to me, completely unaware that one day you'd be calling me your puppy and reassuring me when I overthink. Back then, you were this incredibly pretty girl I was hoping would notice me. Now I get to write you a letter that starts with "Hi, my girlfriend." God… Rafif… I wish I could tell that version of myself what happens next. I thought you were beautiful before I knew you, but I had no idea how much more beautiful you'd become to me once I started falling in love with the person you are.</p>
+          <p>I think about our first video call sometimes. I remember the way you were looking at me, how your eyes were practically glimmering, and that expression on your face that made me feel like you were just as lovestruck as I was. I kept getting shy, but I didn't want to look away because I loved seeing you look at me like that. Then you called me puppy… LIKE OMFG AGHDJKKSDEJAQWIKDFSKJ 🫠</p>
+          <p>You know, I'd been called “puppy” by other women before I met you, but it was always something sexual. That particular pet name was associated with dirty talk in my mind but you gave it an entirely different meaning. You started calling me puppy so naturally, whether we were talking about our day, you were checking on me, or you were being all sweet and sleepy. There's so much affection in your voice when you say it, and I love that something which used to mean one thing to me now reminds me of how gently you love me. Of course, I'm still ridiculously easy to fluster when you lower your voice to tease me. (PERVERT. HMP 😤) I also adore that softer, higher little voice you sometimes use in the morning. You sound so sweet that I just wanna reach through my phone and kiss your entire face.</p>
+          <p>Rafif, I could listen to you talk about absolutely anything. You could be telling me about a random raccoon you saw in the tree outside your window, and I'd still be sitting there smiling because I love the way you tell me things. I notice the little changes in your voice, the way you laugh, and how you sound when something genuinely excites you. Even when I'm quiet, I'm listening, my love.</p>
+          <p>I especially adore how often you ask me, "What are you thinking?" Sometimes I'm overthinking something, sometimes it's the most random thought imaginable, and sometimes I'm literally just listening to your voice, wondering how on earth you're real. There are also times when I'm still stuck on the fact that you called me puppy or bunny five minutes ago and my heart hasn't recovered LOL. You make me feel like even my most ordinary thoughts are worth hearing. ALTHOUGH EXCUSE YOU CUZ WHY IS IT THAT WHEN I ASK YOU THE EXACT SAME QUESTION, YOUR ANSWER IS ALWAYS "NOTHING"???? HELLO???? WHAT DO YOU MEAN NOTHING???? 😡 I WANNA KNOW WHAT'S GOING ON IN THAT PRETTY LITTLE HEAD OF YOURS TOO… I really do, baby. I want to understand how your mind works, what you're excited about, what confuses you, and even the feelings you haven't quite figured out how to explain yet.</p>
+          <p>I love how carefully you listen to me, too. Remember when I casually asked you to send me a little fit-check video? You actually remembered to do it. LIKE YOU REMEMBERED. I couldn't stop smiling when you sent it. Another time, I told you how much I'd love to see you express your feelings creatively, and you went and drew something for me AND wrote a whole page full of reasons why you love me. Baby… those things are so precious to me. You remember little details from our conversations and turn them into thoughtful surprises, sometimes when I'm not even expecting anything. I know you've got school, work, and so many other responsibilities, which makes the time and effort you put into our relationship even more meaningful to me.</p>
+          <p>I still remember that night when I had a nightmare and texted you because I wasn't feeling okay. Your sister was in the room, so you couldn't really talk, but you called me anyway. We stayed on the phone and texted each other instead. You couldn't make the nightmare disappear, and we couldn't have a proper conversation, yet you still found a way to keep me company. I remember looking at my phone and feeling so cared for, even though you weren't saying anything out loud. Your consideration for my feelings means so much to me, Rafif. You genuinely try to make the people you love feel cared for, even when there's very little you can do about their circumstances.</p>
+          <p>I'll never forget the first time I heard you cry, either. The sharp pain I felt in my chest that day caught me completely off guard. I wanted so badly to be there, to pull you into my arms and let you cry against me for as long as you needed. I kept making my stupid little jokes, hoping I could cheer you up, and eventually you started laughing through your tears. That laugh… god… I knew you were still hurting, and a few jokes weren't going to fix everything, but hearing you laugh for even a moment made me so happy. I wished I could've held your face, kissed your forehead, and told you how much I love you. I wanted to understand what was hurting you and how I could make things a little easier. I want you to feel just as comfortable coming to me when you're upset as I feel coming to you, my love.</p>
+          <p>For a long time, I was used to loving people more than they loved me. I was always the one writing paragraphs, apologizing first, and trying to find another way to show someone how much they meant to me. Sometimes I'd pour my heart into a message and get a "K." back. Somewhere along the way, I started believing that if I made myself easy enough to love, maybe people wouldn't leave. I know now that I shouldn't have to make myself smaller to keep somebody around, but knowing something and actually believing it are two very different things.</p>
+          <p>Remember when I told you about something I'd discussed with my therapist? About how I sometimes get so caught up in a romantic relationship that I forget to make enough time for my other relationships? I was genuinely scared to bring that up. I'd tried to talk about the same pattern with someone before, and they responded by ignoring me for two weeks. Even though I was simply being honest about something I wanted to improve, part of me expected you to pull away. Instead, you listened, understood what I was trying to say, and reassured me. I remember how strange it felt afterward, realizing I'd been so afraid of a conversation that turned out to be completely okay.</p>
+          <p>I felt that same fear when I told you about my insecurities regarding D. I expected you to get annoyed or hang up on me, yet you stayed, listened, and made your feelings clear. You reassured me without making me feel ashamed for opening up. I know my insecurities are something I have to work on myself, baby, and I never want you to feel responsible for fixing every worry I have. What I appreciate so much is that I can tell you when something is bothering me without feeling like I'm putting our relationship at risk. You've shown me so much patience, especially in moments when I struggle to give myself any.</p>
+          <p>Our disagreement about the comment I made regarding your hygiene taught me something important, too. I know I crossed a line, and I still regret making you feel uncomfortable about yourself. You deserved better from me in that moment. I remember writing those long apology paragraphs, genuinely feeling awful about what I'd said and not expecting much of a response because of what I'd grown accustomed to. You took the time to reply to everything I'd written. I know that probably sounds ridiculous, but I was genuinely surprised. It wasn't the length of your messages that mattered; it was your willingness to explain how you felt and have a proper conversation with me, even though you were hurt. We acknowledged what I'd done wrong without treating the disagreement as a reason to question the entire relationship.</p>
+          <p>I want to keep learning how to handle difficult conversations with you, Rafif. You shouldn't have to comfort me every time I make a mistake. I want to take responsibility, listen when something hurts you, and make changes that actually matter. I want us to be able to disagree, be upset with each other, and work through things without immediately fearing that the other person is going to leave. I love you, Rafif, and I want to love you well, not just love you intensely.</p>
+          <p>Speaking of how much you care about me, remember that day when Liliana brought up the thing with my dad just to hurt me? I was crying and texting you about it while you were at school, and YOU WERE FURIOUS. LIKE I HAD NEVER SEEN THAT SIDE OF YOU BEFORE. You were so angry on my behalf, yet you kept reminding me to take care of myself and telling me that you cared about me. Then you'd go straight back to being angry at her. YOU WERE BASICALLY TRYING TO COMFORT ME AND FIGHT SOMEONE AT THE SAME TIME LMAO</p>
+          <p>Later, I found out you'd been writing an entire confrontation in your Notes app. The fact that you were initially embarrassed to show me made it even cuter. My girl was over there throwing hands in her Notes app 😭 When you finally showed me, two things stood out immediately: "I know あい and I trust her." Then, a little further down, you wrote, "Stay away from my girl."</p>
+          <p>My girl.</p>
+          <p>Rafif, I wish you knew what those words felt like to me. Someone had just tried to make me feel ashamed of things I'd trusted them enough to share, and there you were, knowing those same things about me but refusing to let them change the way you saw me. You knew the person you'd gotten to know, and you trusted her. You were upset that someone had hurt me, but you also respected my ability to make my own decisions, even when you disagreed with them. I felt so understood and defended by you that day. Somewhere in the middle of that very angry paragraph, you'd called me yours, and I couldn't stop thinking about it. I loved being your girl then. I still do, except now I get to call you mine too. Hehehe.</p>
+          <p>Remember when I told you that if someone asked me what I love about you, I could probably give them a thousand different answers? I meant that. (If you don't believe me, I can make a website of 1000 things I love about you… maybe a future surprise? ;)) Out of all those things, your kindness and courage stand out to me the most. I admire how considerate you are of other people's feelings, how much thought you put into your relationships, and how you continue trying to understand yourself even when the answers aren't easy.</p>
+          <p>I remember when we first started getting close and you told me you were scared of falling in love with me. You'd been hurt before, especially by someone who lived far away, so you had every reason to be cautious about another long-distance relationship. Your schoolwork, your future, your family, and everything else you were uncertain about made the decision even more complicated. I understood why you were scared, my love. Despite all those worries, you were honest with me about your feelings and eventually decided you wanted to give us a chance. I admire the courage it took to make that decision while knowing there were still things neither of us could predict.</p>
+          <p>I never want you to feel like loving me requires you to sacrifice your happiness, your education, or parts of yourself you're not ready to share with your family. There are things about your life I can't fully understand because I haven't experienced them myself, but I want to understand as much as you'll let me. Your feelings, your fears, and your hopes for the future matter to me. Whatever decisions you're not ready to make yet, I hope you give yourself the freedom to make them in your own time. You deserve a life that feels like yours, Rafif, with room for your friends, your studies, your art, and all the things you haven't even discovered you love yet. I want to watch you become more confident, explore new interests, make mistakes, change your mind, and find a direction that makes you happy. I'm already so proud of the woman you are.</p>
+          <p>You have such a beautiful, creative mind, my love. I love how you express yourself through makeup and drawing, how you come up with your own ideas and find ways to bring them to life. I hope you keep creating things even when they don't turn out exactly how you imagined. (Although, honestly, if you showed me ANYTHING, I'd probably think it was perfect. I know I'm biased, but what can I say? Love isn't blind… LOVE MAKES YOU BLIND LOL) You don't have to turn every talent into an achievement or know exactly what you want to do with your future. I admire your curiosity and the effort you put into discovering what interests you. On the days when you're exhausted or uncertain about yourself, I hope you can be as patient with yourself as you've been with me. You deserve the same kindness you so willingly give to others.</p>
+          <p>Please remember that you don't have to be brave every day, Rafif. You're allowed to feel uncertain, frustrated, quiet, or too tired to be your usual affectionate self. I don't expect you to be cheerful all the time, and I don't need you to become some perfect version of yourself to keep me interested. I love getting to know the real you, including the parts you haven't quite figured out yet. I want you to feel comfortable telling me things in your own time, without worrying that you have to make every thought or feeling sound a certain way.</p>
+          <p>Now, there's one slightly weird thing about our relationship that I absolutely need to confess.</p>
+          <p>I love listening to you sleep. 😭</p>
+          <p>OUT OF EVERYTHING I COULD POSSIBLY SAY ABOUT MY GORGEOUS GIRLFRIEND, I'M CHOOSING TO TALK ABOUT THE NOISES SHE MAKES WHILE SHE'S UNCONSCIOUS. BUT HEAR ME OUTTTT. YOU'RE SO CUTE. IF IT'S A CRIME TO LIKE TS… CUFF ME UP　OFFICER. IDGAF :p</p>
+          <p>Sometimes I'll be studying or getting something done while we're on call, and I'll hear your little breaths through my phone. Every now and then, you'll make one of those tiny sleepy whines, and OH MY GOD, I wish you could hear yourself. Sometimes I literally have to stop what I'm doing because you're so unbelievably adorable. You're just sleeping while I'm on the other side of the world, going about my day, ridiculously happy that I get to keep you company. We don't have to be talking or doing anything special for me to enjoy being with you. I love those quiet moments when neither of us needs anything from the other, and I can simply listen to you breathe.</p>
+          <p>I keep imagining what it'll be like to hear those little sleepy noises without a phone between us. To turn my head and see your face on the pillow beside mine, brush your hair away from your forehead, pull the blanket over you, and give you a little kiss without waking you. I want to hear you say good morning while you're actually lying next to me, sit beside you while you draw, watch you do your makeup, and reach for your hand without having to imagine it. I want to bring you pink lilies and see your reaction in person. I want to take you on dates, go for walks, get food together, and experience all those ordinary things that other couples probably don't even think twice about.</p>
+          <p>AND YES, I WANT TO KISS YOU. SO BADLY. I want to kiss your forehead, your cheeks, your pretty little nose, and that mouth that keeps getting your poor puppy into trouble. I have a frankly unreasonable number of kisses waiting for you, my pretty girl. I HOPE YOU'RE PREPARED. I dream about the simple things just as much, though. Being in the same room when neither of us has anywhere important to be, doing our own little things, occasionally looking over at each other and smiling. I don't know when we'll get to experience that. I wish I did.</p>
+          <p>Until then, I know we're both going to have busy days, and there'll be times when we miss each other terribly. BABY, YOU KNOW I'M GOING TO MISS YOU. I'm probably going to be the most dramatic puppy alive, with all the whining, needy messages, and an embarrassing number of reels sent to your phone. YOU KNOW WHO YOU AGREED TO DATE :3 Even with all that ridiculousness, I want you to feel completely comfortable focusing on the things that matter to you. Study when you need to study, rest when you're tired, and enjoy time with the people you care about. I want us to have a relationship that adds happiness to our lives without either of us neglecting everything else.</p>
+          <p>You know, my love, before I met you, I knew what it felt like to love someone who didn't feel the same way. I also knew what it felt like to be loved by someone whose feelings I couldn't return. What I hadn't experienced was loving someone this much and having her genuinely want me back. Sometimes I'll be doing something completely unrelated, glance at your picture on my phone, and suddenly remember that you're my girlfriend. Like… that's MY girlfriend. AND I'M HERS. I get this stupid smile on my face all over again.</p>
+          <p>Rafif, I hope you understand how extraordinary you are, completely independently of how happy you make me. Your kindness, creativity, humour, and the way you consider other people's feelings were all part of you long before we met. You didn't become special because I fell in love with you. You were already special. I just got lucky enough to discover you. I wish you could see yourself with even a little of the affection I have for you. I mean the actual Rafif who shrugs her shoulders when she gets shy, who writes angry little speeches in her Notes app, who sometimes has no idea what she wants to do with her future, and who has the most adorable laugh I've ever heard. I love that girl, and I hope she learns to be as gentle with herself as she is with the people she loves.</p>
+          <p>There's still so much we haven't discovered about each other. We'll have things we disagree on, habits we'll need to get used to, and parts of ourselves we're still learning to understand. I'm looking forward to all of that, especially the chance to keep growing together without feeling like either of us has to become somebody else to deserve the other's love. I want to learn how to love you in the ways that matter most to you, not just through poems, compliments, and ridiculously long letters like this one, but through the way I treat you every day. I want to listen when you're upset, respect your boundaries, remember what's important to you, and keep making an effort even when things aren't easy.</p>
+          <p>For the longest time, I thought love was something I had to constantly prove I deserved. I'm beginning to understand what it feels like when two people give their affection willingly, simply because they want to. I don't want to love you out of fear that you'll leave. I want to love you because I genuinely love loving you. I love getting excited about your happiness, cheering you on, listening to your random ass yap sessions, and watching you discover new things about yourself. I love being loved by you, Rafif, but I also love that I get to be the person who loves you back. After all those conversations about what we wanted, what frightened us, and whether we were ready, we somehow found ourselves here. You chose me, and I chose you. Neither of us knows exactly what the future holds, but we both wanted to give this a chance. I'm so glad we did.</p>
+          <p>Sometimes I wish I could go back to the day we met and have a little conversation with my past self. I'd find that girl staring at your HelloTalk profile, desperately trying to think of something clever enough to get your attention, and tell her to send the wave. I'd tell her not to worry so much about finding the perfect words, because she's about to meet someone who will make her forget them anyway. Someone whose name she'll eventually find herself saying a hundred times a day. (Five letters. Two syllables. One particularly difficult R that's been humbling me since the day we met. Which is rather tragic, considering I study linguistics [haha yes I copy pasteed ts from my poem. SUE Me :p])</p>
+          <p>I'd also tell her that the girl she's so convinced would never like her back is going to fall in love with her too, and one day, when she finally asks that girl to be her girlfriend…</p>
+          <p>She's going to say yes.</p>
+          <p>My love, I don't think that version of me would believe it. I've spent so much of my life with more love to give than I knew what to do with, wondering whether I'd ever get to share it with someone who wanted to love me just as much. Now I get to write all of this to you. Not just somebody who loves me back, but you. Rafif. The girl I was so nervous to approach, who turned out to be someone far more wonderful than I could've imagined. I'm grateful that our lives crossed that day, and even more grateful that we both wanted to see where it could lead.</p>
+          <p>We're only at the beginning of this, and there's so much we haven't experienced yet. I hope that one day we'll look back on this letter together, maybe while you're lying beside me, laughing at how embarrassingly obsessed I was. I'll probably be right there defending myself. "EXCUSE YOU, I WAS COMPLETELY NORMAL ABOUT YOU." (Literally nobody would believe me… i am you freaky Nikki after all :3) The difference is that by then, I won't have to wonder what it feels like to hold you. I'll know how you fit into my arms, what your hair feels like against my cheek, and what your laugh sounds like when you're right beside me. I look forward to being close enough to you that affection doesn't always have to become words before it can reach you.</p>
+          <p>I think the first time I see you in person, I'll have a million things planned to say. You'll look at me with those beautiful doe eyes, smile, maybe call me puppy in that voice of yours, and I'll forget every single word. AGAIN. Except this time, I won't need to find them. I'll be able to walk into your arms, hide my face against your neck, and hold you for as long as you'll let me. After all those nights of wishing I could be beside you, I'll finally get to tell you something I've wanted to say without a screen between us.</p>
+          <p>"I love you, Rafif."</p>
+          <p class="love-translation" lang="ja">愛してるよ。</p>
+          <p class="love-translation" lang="ar" dir="rtl">أنا بحبِّك كتير كتير، وما بحب غيرِك إنتِ وبس.</p>
+          <p class="love-translation" lang="my">Rafif ကို အရူးအမူး ချစ်နေမိပြီ … သေမလိုချစ်တယ် အချစ်ဆုံးလေးရေ…</p>
+          <p>I love you. I love you so, so much.</p>
+          <p>Thank you, my love, for saying yes.</p>
+          <div class="signature-flourish">
+            <p class="sign-off">Forever your ridiculously lovesick puppy,</p>
+            <p class="name" lang="ja">あい♡</p>
+            <div class="pressed-divider" aria-hidden="true">
+              <img src="pink-lilies.png" width="1112" height="1414" alt="" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+    <footer class="letter-controls" id="letter-end" aria-label="End of the letter" tabindex="-1">
+      <button class="letter-replay" type="button">be careful what you wish for... ↺</button>
+      <p class="letter-footer">made with so much love, just for you</p>
+    </footer>
+  </section>
+</template>
+
+<script>
+function setHand(el,s){el.textContent=s;el.setAttribute('aria-label',s)}
+const scribbles=document.getElementById('scribbles');const main=document.getElementById('main'),panel=document.getElementById('panel'),yes=document.getElementById('yes'),no=document.getElementById('no'),hint=document.getElementById('hint');let count=0;setHand(document.querySelector('.question'),'Rafif, will you be my girlfriend?');setHand(yes,'yes');setHand(no,'no');const lines=["you clicked the wrong one baby. Try again ♡", "no? but you told me that you wanna put a baby in me", "You are really pushing this... you keep saying no like i could ever stop wanting you", "go on. press it again. i dare you. i'm not getting tired of you.", "this no button keep getting in between us and you know i wouldnt let ANYTHING come between us :)"];
+const frantic=["why???", "i thought u loved me", "MOMMYYYY PLEASE", "WHAT DID I DO", "why???why???why???", "Rafif... I love you so so so so so much", "I don't think I could live without you", "I love you more than anyone in the world", "no no no no no no no no", "DON'T DO THAT", "I THOUGHT WE WERE HAVING A NICE DAY", "PLEASE", "SAY YES", "WHY WOULDNT YOU JUST SAY YES", "You know i would do anything for you Rafif ANYTHING", "do you have someone else you like?", "WHO IS THE OTHER WOMAN... OR IS IT A MAN... TELL MEE..."];
+function addScribbles(){const batch=Math.min(12+count*9,90);for(let i=0;i<batch;i++){const el=document.createElement('span');el.className='scribble';el.textContent=frantic[(i*7+count*3+Math.floor(Math.random()*5))%frantic.length];el.style.cssText=`left:${Math.random()*112-6}%;top:${Math.random()*110-5}%;--fs:${12+Math.random()*(count*3+15)}px;--rot:${Math.random()*36-18}deg;--op:${Math.min(.15+count*.09+Math.random()*.25,.88)};`;scribbles.appendChild(el)}if(scribbles.children.length>420){for(let i=0;i<75;i++)scribbles.firstChild.remove()}}
+
+function placeNo(){
+ if(count<1||count>=6||!no.isConnected)return;
+ const actions=document.getElementById('actions');
+ actions.classList.remove('safe-stack');no.classList.remove('safe-no');
+ const w=no.offsetWidth,h=no.offsetHeight,gap=18,edge=12;
+ const maxX=innerWidth-w-edge,maxY=innerHeight-h-edge;
+ const blocked=[yes,document.querySelector('.question'),hint,document.querySelector('.eyebrow'),document.querySelector('.kitty')].filter(Boolean).map(el=>el.getBoundingClientRect());
+ const clear=(x,y)=>x>=edge&&y>=edge&&x<=maxX&&y<=maxY&&blocked.every(r=>x+w+gap<=r.left||x-gap>=r.right||y+h+gap<=r.top||y-gap>=r.bottom);
+ const xs=[edge,maxX],ys=[edge,maxY],candidates=[];
+ blocked.forEach(r=>{xs.push(r.left-w-gap,r.right+gap);ys.push(r.top-h-gap,r.bottom+gap)});
+ for(let i=0;i<80;i++){const x=edge+Math.random()*Math.max(0,maxX-edge),y=edge+Math.random()*Math.max(0,maxY-edge);if(clear(x,y))candidates.push({x,y})}
+ for(const x of xs)for(const y of ys)if(clear(x,y))candidates.push({x,y});
+ if(candidates.length){const pos=candidates[Math.floor(Math.random()*candidates.length)];no.style.left=pos.x+'px';no.style.top=pos.y+'px'}
+ else{no.style.left='';no.style.top='';no.classList.add('safe-no');actions.classList.add('safe-stack')}
+}
+window.addEventListener('resize',placeNo);
+window.addEventListener('scroll',placeNo,{passive:true});
+if(document.fonts)document.fonts.ready.then(placeNo);
+
+const finalLines=["Rafif... I love you so so so so so much", "I don't think I could live without you", "I love you more than anyone in the world", "no no no no no no no no", "DON'T DO THAT", "I THOUGHT WE WERE HAVING A NICE DAY", "PLEASE", "SAY YES", "WHY WOULDNT YOU JUST SAY YES", "You know i would do anything for you Rafif ANYTHING", "do you have someone else you like?", "WHO IS THE OTHER WOMAN... OR IS IT A MAN... TELL MEE..."];
+
+function finalScribbles(){
+ scribbles.replaceChildren();
+ const fragment=document.createDocumentFragment();
+ for(let i=0;i<260;i++){
+  const el=document.createElement('span');el.className='scribble';
+  el.textContent=finalLines[Math.floor(Math.random()*finalLines.length)];
+  el.style.cssText=`left:${Math.random()*115-15}%;top:${Math.random()*110-5}%;--fs:${16+Math.random()*38}px;--rot:${Math.random()*64-32}deg;--op:${.35+Math.random()*.55};animation-delay:${-Math.random()}s;`;
+  fragment.appendChild(el);
+ }
+ scribbles.appendChild(fragment);
+}
+
+function escapeNo(){count++;addScribbles();hint.textContent=lines[Math.min(count-1,lines.length-1)];if(count>=6){main.classList.add('night','final-question');yes.classList.add('huge-yes');yes.style.fontSize='';yes.style.padding='';setHand(yes,'yes');no.remove();hint.textContent="I'm gonna ask you one last time... Rafif, will you be my girlfriend?";hint.style.visibility='visible';finalScribbles();window.scrollTo(0,0);return}const size=Math.min(1+count*.75,5);yes.style.fontSize=`${16*size}px`;yes.style.padding=`${12*size}px min(${30*size}px,20vw)`;no.classList.add('escape-no');placeNo();if(count>=5)main.classList.add('night')}
+function showEnvelope() {
+  main.className = 'success mail-desk';
+  main.replaceChildren(document.getElementById('sealed-envelope').content.cloneNode(true));
+  const trigger = main.querySelector('.envelope-trigger');
+  window.scrollTo(0, 0);
+  trigger.focus({ preventScroll: true });
+  trigger.addEventListener('click', () => {
+    trigger.setAttribute('aria-expanded', 'true');
+    trigger.closest('.mail-arrival').classList.add('unsealing');
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      showLetter();
+    } else {
+      window.setTimeout(showLetter, 1170);
+    }
+  }, { once: true });
+}
+
+function showLetter() {
+  main.replaceChildren(document.getElementById('opened-letter').content.cloneNode(true));
+  const beginning = main.querySelector('#letter-start');
+  const ending = main.querySelector('#letter-end');
+
+  function goToTop() {
+    beginning.focus({ preventScroll: true });
+    window.scrollTo(0, 0);
+  }
+
+  main.querySelector('.to-top').addEventListener('click', goToTop);
+  main.querySelector('.to-bottom').addEventListener('click', () => {
+    ending.focus({ preventScroll: true });
+    window.scrollTo(0, document.documentElement.scrollHeight);
+  });
+  main.querySelector('.letter-replay').addEventListener('click', () => window.location.reload());
+  goToTop();
+}
+
+no.addEventListener('click', escapeNo);
+yes.addEventListener('click', showEnvelope, { once: true });
+
+</script></body></html>
